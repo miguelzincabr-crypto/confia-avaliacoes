@@ -1,0 +1,13 @@
+# Copie para a raiz do projeto ao publicar a build Vite no Netlify.
+[build]
+  command = "npm run build:vite"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# SPA fallback: rotas como /empresa/aurora-cafe precisam servir index.html.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#f7f9fc] text-slate-700 antialiased;
+}
+
+::selection {
+  @apply bg-brand-200 text-brand-900;
+}
+
+/* Scrollbar discreta e coerente com a identidade visual */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-slate-300;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand-400;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-900 px-5 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-800 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-brand-800 transition-all duration-200 hover:border-brand-300 hover:bg-brand-50 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand-900 placeholder:text-slate-400 transition-all focus:border-brand-400 focus:outline-none focus:ring-4 focus:ring-brand-100;
+  }
+  .label-field {
+    @apply mb-1.5 block text-sm font-semibold text-brand-900;
+  }
+  .section-title {
+    @apply text-2xl font-bold tracking-tight text-brand-900 sm:text-3xl;
+  }
+}
